@@ -1,0 +1,6 @@
+**Aihe**: Matikkapeli. Taroituksena toteuttaa yksinkertainen, mutta helposti laajennettavissa oleva matematiikkapeli. Ja koska kyseessä on "peli", täytyy siinä olla jokin päämäärä. Tämä on, että aloitellaan helpoilla ja näistä riittävän hyvin suoriutumalla pääsee suorittamaan yhä haastavampia tehtäviä (jännää!).
+	Kunkin pelaajan suoritukset tallennetaan (esim. kerätyt pisteet, tähdet tai jotain muuta, millä näitä voi mitata). Tarkoitus olisi, että kukin pelaaja pääsisi "jatkamaan" siitä mihin on jäänyt, jotta aina peliin palatessa ei tarvitse käydä tasoa 1+1=2 uudelleen.
+
+**Käyttäjät**: Kaikki, jotka haluavat testata matemaattista osaamistaan tai kenties oppia lisää huikean pelin avulla.
+
+** Käyttäjien toiminnot**:
