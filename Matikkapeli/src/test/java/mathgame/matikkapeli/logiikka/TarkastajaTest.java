@@ -13,14 +13,16 @@ public class TarkastajaTest {
     
     Tarkastaja tarkastaja;
     
-    @Before
-    public void setUp() {
+    @Test
+    public void vaarinToimii() {
         tarkastaja = new Tarkastaja(2, 6);
+        assertFalse(tarkastaja.onkoOikein());
     }
     
     @Test
-    public void onkoOikeinToimii() {
-        assertFalse(tarkastaja.onkoOikein());
+    public void oikeinToimii() {
+        tarkastaja = new Tarkastaja(6, 6);
+        assertTrue(tarkastaja.onkoOikein());        
     }
     
 }
