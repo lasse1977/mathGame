@@ -5,5 +5,5 @@ Tämä peli on suunnattu neroille ja vähemmän neroille. Pelissä edetään '1+
 
 
 ### Dokumentaatio
-[aiheen kuvaus](dokumentaatio/aihe.md)
-[tuntikirjanpito](dokumentaatio/tuntikirjanpito.md)
+*[aiheen kuvaus](dokumentaatio/aihe.md)
+*[tuntikirjanpito](dokumentaatio/tuntikirjanpito.md)
