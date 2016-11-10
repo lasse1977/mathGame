@@ -7,4 +7,4 @@
 	Lisäksi pelissä tulee olemaan jonkinlainen valikko, jonka sisältö ja toiminnot ratkeavat projektin edetessä.
 
 **Luokkakaavio**
-![Ensimmäisen vaiheen luokkakaavio](luokkakaavio.png)
+![Ensimmäisen vaiheen luokkakaavio](luokkakaavio_logiikka.png)

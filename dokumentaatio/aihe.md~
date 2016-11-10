@@ -5,3 +5,6 @@
 
 **Käyttäjien toiminnot**: Nimimerkin "rekisteröinti" tai sellaisen jo omaavan kirjautuminen. Itse pelissä vastaaminen eli oikean numeron/luvun syöttäminen sille varattuun "laatikkoon".
 	Lisäksi pelissä tulee olemaan jonkinlainen valikko, jonka sisältö ja toiminnot ratkeavat projektin edetessä.
+
+**Luokkakaavio**
+![Ensimmäisen vaiheen luokkakaavio](luokkakaavio.png)
