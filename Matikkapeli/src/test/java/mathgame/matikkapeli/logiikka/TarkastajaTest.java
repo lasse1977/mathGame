@@ -25,4 +25,10 @@ public class TarkastajaTest {
         assertTrue(tarkastaja.onkoOikein());        
     }
     
+    @Test
+    public void oikeaVastausOnOikein() {
+        tarkastaja = new Tarkastaja(15, 25);
+        assertEquals(25, tarkastaja.oikeaVastaus());
+    }
+    
 }

@@ -11,11 +11,26 @@ public class LukujenArpoja {
     }
     
     public int haeLuku() {
-        String luku = "1";
-        for (int i = 0; i <= taso / 50; i++) {
-            luku = luku + "0";
+        int luku = taso * 5;
+        if (mitaLasketaan().equals("-")) {
+            luku = (taso - 5) * 5;
+        } 
+        if (mitaLasketaan().equals("x")) {
+            luku = (taso - 10) * 2;
         }
-        return new Random().nextInt(Integer.parseInt(luku));
+        return new Random().nextInt(luku);
+    }
+    
+    public String mitaLasketaan() {
+        String merkit = "+-x";
+        int merkki = 0;
+        if (taso % 15 > 5) {
+            merkki = 1;
+        }
+        if (taso % 15 == 0 || taso % 15 > 10) {
+            merkki = 2;
+        }
+        return "" + merkit.charAt(merkki);
     }
   
 }

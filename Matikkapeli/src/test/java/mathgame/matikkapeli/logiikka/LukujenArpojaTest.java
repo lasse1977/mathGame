@@ -17,11 +17,15 @@ import static org.junit.Assert.*;
  * @author nielasse
  */
 public class LukujenArpojaTest {
-    LukujenArpoja arpoja;
+    LukujenArpoja arpoja = new LukujenArpoja(64);
     
     @Test
     public void palauttaaLuvunTasonMukaan() {
-        arpoja = new LukujenArpoja(160);
-        assertTrue(arpoja.haeLuku()<10000);
+        assertTrue(arpoja.haeLuku() >= 0 && arpoja.haeLuku() < 320);
+    }
+    
+    @Test
+    public void palauttaaOikeanOperaattorin() {
+        assertEquals("+", arpoja.mitaLasketaan());
     }
 }

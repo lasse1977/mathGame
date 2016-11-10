@@ -14,5 +14,9 @@ public class Tarkastaja {
     public boolean onkoOikein() {
         return vastaus == oikeaVastaus;
     }
+    
+    public int oikeaVastaus() {
+        return oikeaVastaus;
+    }
         
 }
