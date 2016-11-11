@@ -36,6 +36,6 @@ public class Pelikierros {
                 System.out.println("Väärin, oikea vastaus on " + tarkastaja.oikeaVastaus());
             }
         }
-        System.out.println("Sait " + pisteet + "/10 pistettä.");
+        System.out.println("Sait " + pisteet + "/10 pistettä");
     }
 }
