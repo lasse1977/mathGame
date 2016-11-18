@@ -36,14 +36,7 @@ public class Pelikierros {
     }
     
     public void lopetaKierros() {
-        int tahdet = 0;
-        if (pisteet < 5) {
-            System.out.println("Et läpäissyt tasoa. Yritä uudelleen (k/e)?");
-        } else {
-            tahdet = (pisteet - 5) / 2 + 1;
-            System.out.println("Taso suoritettu" + tahdet + " tähdellä.\nJatketaanko seuraavalle tasolle (k/e)?");
-            pelaaja.setTaso(pelaaja.getTaso() + 1);
-        }
+        toString();
         String syote = lukija.nextLine();
         pisteet = 0;
         if (syote.equals("k")) {
@@ -54,5 +47,17 @@ public class Pelikierros {
     
     public int haePisteet() {
         return this.pisteet;
+    }
+    
+    @Override
+    public String toString() {
+        int tahdet = 0;
+        if (pisteet < 5) {
+            return "Et läpäissyt tasoa. Yritä uudelleen (k/e)?";
+        } else {
+            tahdet = (pisteet - 5) / 2 + 1;
+            pelaaja.setTaso(pelaaja.getTaso() + 1);
+            return "Taso suoritettu" + tahdet + " tähdellä.\nJatketaanko seuraavalle tasolle (k/e)?";
+        }
     }
 }
