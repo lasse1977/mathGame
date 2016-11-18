@@ -34,7 +34,7 @@ public class TehtavanArpoja {
     }
     
     public String tehtava(int luku1, int luku2) {
-        return " " + luku1 + " " +mitaLasketaan() + " " + luku2;
+        return " " + luku1 + " " + mitaLasketaan() + " " + luku2;
     }
     
     public int lasku(int luku1, int luku2) {

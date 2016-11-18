@@ -8,7 +8,7 @@ Päivä | Tunnit | Kuvaus
 07.11.2016 | 1h | koodailua ja testejä
 09.11.2016 | 2h | pit- ja checkstyle ym.
 11.11.2016 | 0,5h | testi ja palautus 2
-
+18.11.2016 |
 
 
 

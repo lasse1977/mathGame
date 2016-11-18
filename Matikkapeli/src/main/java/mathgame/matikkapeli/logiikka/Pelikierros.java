@@ -38,12 +38,10 @@ public class Pelikierros {
     public void lopetaKierros() {
         int tahdet = 0;
         if (pisteet < 5) {
-            System.out.println("Et läpäissyt tasoa.");
-            System.out.println("Yritä uudelleen (k/e)?");
+            System.out.println("Et läpäissyt tasoa. Yritä uudelleen (k/e)?");
         } else {
             tahdet = (pisteet - 5) / 2 + 1;
-            System.out.println("Onnittelut! Läpäisit tason ja sait " + tahdet + " tähteä.");
-            System.out.println("Jatketaanko seuraavalle tasolle (k/e)?");
+            System.out.println("Taso suoritettu" + tahdet + " tähdellä.\nJatketaanko seuraavalle tasolle (k/e)?");
             pelaaja.setTaso(pelaaja.getTaso() + 1);
         }
         String syote = lukija.nextLine();
