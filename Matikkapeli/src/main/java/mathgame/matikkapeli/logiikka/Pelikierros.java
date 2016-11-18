@@ -5,37 +5,56 @@ import java.util.Scanner;
 
 
 public class Pelikierros {
+    private Scanner lukija;
     private Pelaaja pelaaja;
-    private LukujenArpoja arpoja;
+    private TehtavanArpoja arpoja;
+    private int pisteet;
+    
     
     public Pelikierros(Pelaaja pelaaja) {
+        this.lukija = new Scanner(System.in);
         this.pelaaja = pelaaja;
-        this.arpoja = new LukujenArpoja(pelaaja.getTaso());
+        this.arpoja = new TehtavanArpoja(pelaaja.getTaso());
+        this.pisteet = 0;
     }
     
     public void pelaa() {
-        Scanner lukija = new Scanner(System.in);
-        int pisteet = 0;
         for (int i = 0; i < 10; i++) {
             int luku1 = arpoja.haeLuku();
             int luku2 = arpoja.haeLuku();
-            System.out.println("Paljonko on " + luku1 + arpoja.mitaLasketaan() + luku2 + "?");
+            System.out.println("Paljonko on " + arpoja.tehtava(luku1, luku2) + "?");
             int vastaus = Integer.parseInt(lukija.nextLine());
-            int lasku = luku1 + luku2;
-            if (arpoja.mitaLasketaan().equals("-")) {
-                lasku = luku1 - luku2;
-            }
-            if (arpoja.mitaLasketaan().equals("x")) {
-                lasku = luku1 * luku2;
-            }
-            Tarkastaja tarkastaja = new Tarkastaja(vastaus, lasku);
+            Tarkastaja tarkastaja = new Tarkastaja(vastaus, arpoja.lasku(luku1, luku2));
             if (tarkastaja.onkoOikein()) {
-                System.out.println("Oikein");
                 pisteet++;
             } else {
                 System.out.println("Väärin, oikea vastaus on " + tarkastaja.oikeaVastaus());
             }
         }
         System.out.println("Sait " + pisteet + "/10 pistettä");
+        lopetaKierros();
+    }
+    
+    public void lopetaKierros() {
+        int tahdet = 0;
+        if (pisteet < 5) {
+            System.out.println("Et läpäissyt tasoa.");
+            System.out.println("Yritä uudelleen (k/e)?");
+        } else {
+            tahdet = (pisteet - 5) / 2 + 1;
+            System.out.println("Onnittelut! Läpäisit tason ja sait " + tahdet + " tähteä.");
+            System.out.println("Jatketaanko seuraavalle tasolle (k/e)?");
+            pelaaja.setTaso(pelaaja.getTaso() + 1);
+        }
+        String syote = lukija.nextLine();
+        pisteet = 0;
+        if (syote.equals("k")) {
+            this.arpoja = new TehtavanArpoja(pelaaja.getTaso());
+            pelaa();
+        }
+    }
+    
+    public int haePisteet() {
+        return this.pisteet;
     }
 }

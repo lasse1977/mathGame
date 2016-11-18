@@ -3,10 +3,10 @@ package mathgame.matikkapeli.logiikka;
 
 import java.util.Random;
 
-public class LukujenArpoja {
+public class TehtavanArpoja {
     private int taso;
     
-    public LukujenArpoja(int taso) {
+    public TehtavanArpoja(int taso) {
         this.taso = taso;
     }
     
@@ -31,6 +31,21 @@ public class LukujenArpoja {
             merkki = 2;
         }
         return "" + merkit.charAt(merkki);
+    }
+    
+    public String tehtava(int luku1, int luku2) {
+        return " " + luku1 + " " +mitaLasketaan() + " " + luku2;
+    }
+    
+    public int lasku(int luku1, int luku2) {
+        int lasku = luku1 + luku2;
+        if (mitaLasketaan().equals("-")) {
+            lasku = luku1 - luku2;
+        }
+        if (mitaLasketaan().equals("x")) {
+            lasku = luku1 * luku2;
+        }
+        return lasku;
     }
   
 }

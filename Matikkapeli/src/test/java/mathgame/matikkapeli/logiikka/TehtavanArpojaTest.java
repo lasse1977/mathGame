@@ -16,8 +16,8 @@ import static org.junit.Assert.*;
  *
  * @author nielasse
  */
-public class LukujenArpojaTest {
-    LukujenArpoja arpoja = new LukujenArpoja(64);
+public class TehtavanArpojaTest {
+    TehtavanArpoja arpoja = new TehtavanArpoja(64);
     
     @Test
     public void palauttaaLuvunTasonMukaan() {
