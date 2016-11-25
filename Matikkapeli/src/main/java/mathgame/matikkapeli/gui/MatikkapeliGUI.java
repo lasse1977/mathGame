@@ -5,9 +5,8 @@ import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridLayout;
-import static javafx.scene.text.Font.font;
 import javax.swing.*;
-import static javafx.scene.text.Font.font;
+
 
 
 public class MatikkapeliGUI implements Runnable {

@@ -3,6 +3,11 @@ package mathgame.matikkapeli.logiikka;
 
 import java.util.Random;
 
+/**
+ * Luokka arpoo pelattavan tason mukaiset laskutehtävät pelaajalle.
+ * Jokaisella tasolla 10 tehtävää, joista saavutetut pisteet vaikuttavat
+ * etenemiseen.
+ */
 public class TehtavanArpoja {
     private int taso;
     
@@ -10,6 +15,11 @@ public class TehtavanArpoja {
         this.taso = taso;
     }
     
+    /**
+     * Metodi arpoo laskettavat luvut.
+     * 
+     * @return  Laskettava luku.
+     */
     public int haeLuku() {
         int luku = taso * 5;
         if (mitaLasketaan().equals("-")) {
@@ -18,7 +28,7 @@ public class TehtavanArpoja {
         if (mitaLasketaan().equals("x")) {
             luku = (taso - 10) * 2;
         }
-        return new Random().nextInt(luku);
+        return new Random().nextInt(luku) + 1;
     }
     
     public String mitaLasketaan() {
@@ -38,14 +48,14 @@ public class TehtavanArpoja {
     }
     
     public int tehtavanVastaus(int luku1, int luku2) {
-        int lasku = luku1 + luku2;
+        int vastaus = luku1 + luku2;
         if (mitaLasketaan().equals("-")) {
-            lasku = luku1 - luku2;
+            vastaus = luku1 - luku2;
         }
         if (mitaLasketaan().equals("x")) {
-            lasku = luku1 * luku2;
+            vastaus = luku1 * luku2;
         }
-        return lasku;
+        return vastaus;
     }
   
 }

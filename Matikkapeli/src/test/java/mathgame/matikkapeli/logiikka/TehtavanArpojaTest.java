@@ -18,31 +18,65 @@ import static org.junit.Assert.*;
  */
 public class TehtavanArpojaTest {
     
+    TehtavanArpoja arpoja;
     
     @Test
     public void palauttaaLuvunTasonMukaanSummaKierroksella() {
-        TehtavanArpoja arpoja = new TehtavanArpoja(64);
-        assertTrue(arpoja.haeLuku() >= 0 && arpoja.haeLuku() < 320);
+        arpoja = new TehtavanArpoja(64);
+        for (int i = 0; i < 10; i++) {
+            int luku = arpoja.haeLuku();
+            assertTrue(luku > 0 && luku <= 320);
+        }
     }
     
     @Test
     public void palauttaaLuvunTasonMukaanErotusKierroksella() {
-        TehtavanArpoja arpoja = new TehtavanArpoja(54);
-        assertTrue(arpoja.haeLuku() >= 0 && arpoja.haeLuku() < 245);
+        arpoja = new TehtavanArpoja(54);
+        for (int i = 0; i < 10; i++) {
+            int luku = arpoja.haeLuku();
+            assertTrue(luku > 0 && luku <= 245);
+        }
     }
     
     @Test
     public void palauttaaLuvunTasonMukaanTuloKierroksella() {
-        TehtavanArpoja arpoja = new TehtavanArpoja(59);
-        assertTrue(arpoja.haeLuku() >= 0 && arpoja.haeLuku() < 98);
+        arpoja = new TehtavanArpoja(59);
+        for (int i = 0; i < 10; i++) {
+            int luku = arpoja.haeLuku();
+            assertTrue(luku > 0 && luku <= 98);
+        }
     }
+    
     @Test
     public void palauttaaOikeanOperaattorin() {
-        TehtavanArpoja arpoja = new TehtavanArpoja(18);
-        assertEquals("+", arpoja.mitaLasketaan());
-        arpoja = new TehtavanArpoja(24);
-        assertEquals("-", arpoja.mitaLasketaan());
-        arpoja = new TehtavanArpoja(28);
-        assertEquals("x", arpoja.mitaLasketaan());
+        arpoja = new TehtavanArpoja(1);
+        for (int i = 0; i < 5; i++) {
+            assertEquals("+", arpoja.mitaLasketaan());
+        }
+        arpoja = new TehtavanArpoja(6);
+        for (int i = 6; i < 11; i++) {
+            assertEquals("-", arpoja.mitaLasketaan());
+        }
+        arpoja = new TehtavanArpoja(11);
+        for (int i = 11; i < 16; i++) {
+            assertEquals("x", arpoja.mitaLasketaan());
+        }
     }
+    
+    @Test
+    public void oikeaVastaus() {
+        arpoja = new TehtavanArpoja(28);
+        assertEquals(12, arpoja.tehtavanVastaus(3, 4));
+        arpoja = new TehtavanArpoja(6);
+        assertEquals(-1, arpoja.tehtavanVastaus(3, 4));
+        arpoja = new TehtavanArpoja(4);
+        assertEquals(7, arpoja.tehtavanVastaus(3, 4));
+    }
+    
+    @Test
+    public void tehtavananto() {
+        arpoja = new TehtavanArpoja(15);
+        assertEquals(" 2 x 6", arpoja.tehtava(2, 6));
+    }
+    
 }

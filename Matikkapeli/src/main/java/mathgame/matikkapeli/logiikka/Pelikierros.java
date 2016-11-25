@@ -14,7 +14,7 @@ public class Pelikierros {
     public Pelikierros(Pelaaja pelaaja) {
         this.lukija = new Scanner(System.in);
         this.pelaaja = pelaaja;
-        this.arpoja = new TehtavanArpoja(pelaaja.getTaso());
+        this.arpoja = new TehtavanArpoja(pelaaja.haeTaso());
         this.pisteet = 0;
     }
     
@@ -32,15 +32,27 @@ public class Pelikierros {
             }
         }
         System.out.println("Sait " + pisteet + "/10 pistettä");
+        if (pisteet < 5) {
+            System.out.println("Et läpäissyt tasoa. Yritä uudelleen (k/e)?");
+        } else {
+            int tahdet = (pisteet - 5) / 2 + 1;
+            pelaaja.asetaTaso(pelaaja.haeTaso() + 1);
+            System.out.println("Taso suoritettu" + tahdet + " tähdellä.\nJatketaanko seuraavalle tasolle (k/e)?");
+        }
         lopetaKierros();
     }
     
+    public int haeTahdet(int pisteet) {
+        if (pisteet >= 5) {
+            return (pisteet - 5) / 2 + 1;
+        }
+        return 0;
+    }
+    
     public void lopetaKierros() {
-        toString();
         String syote = lukija.nextLine();
-        pisteet = 0;
         if (syote.equals("k")) {
-            this.arpoja = new TehtavanArpoja(pelaaja.getTaso());
+            this.arpoja = new TehtavanArpoja(pelaaja.haeTaso());
             pelaa();
         }
     }
@@ -51,13 +63,6 @@ public class Pelikierros {
     
     @Override
     public String toString() {
-        int tahdet = 0;
-        if (pisteet < 5) {
-            return "Et läpäissyt tasoa. Yritä uudelleen (k/e)?";
-        } else {
-            tahdet = (pisteet - 5) / 2 + 1;
-            pelaaja.setTaso(pelaaja.getTaso() + 1);
-            return "Taso suoritettu" + tahdet + " tähdellä.\nJatketaanko seuraavalle tasolle (k/e)?";
-        }
+        return pelaaja.haeNimi() + " : " + haeTahdet(pisteet) + " tähteä";
     }
 }

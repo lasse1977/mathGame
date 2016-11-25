@@ -34,8 +34,8 @@ public class PelaajaTest {
     
     @Test
     public void tasonVoiAsettaaManuaalisesti(){
-        pelaaja.setTaso(8);
-        assertEquals(8, pelaaja.getTaso());
+        pelaaja.asetaTaso(8);
+        assertEquals(8, pelaaja.haeTaso());
     }
     
 }

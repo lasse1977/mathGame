@@ -12,6 +12,7 @@ Päivä | Tunnit | Kuvaus
 20.11.2016 | 1,5h | katselmointi
 25.11.2016 | 0,5h | logiikan korjailua á la palaute
 25.11.2016 | 1,5h | GUI:n aloitus
+25.11.2016 | 2h | Parantelua, mutanttien tappamista ym.
 
 
 

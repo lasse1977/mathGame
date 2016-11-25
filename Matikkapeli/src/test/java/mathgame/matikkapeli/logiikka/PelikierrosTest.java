@@ -5,6 +5,7 @@
  */
 package mathgame.matikkapeli.logiikka;
 
+import java.util.Scanner;
 import java.util.HashMap;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -15,8 +16,8 @@ import static org.junit.Assert.*;
 
 
 public class PelikierrosTest {
-    
-    Pelikierros kierros = new Pelikierros(new Pelaaja("Masa", 8, new HashMap()));
+    Pelaaja pelaaja = new Pelaaja("Masa", 8, new HashMap());
+    Pelikierros kierros = new Pelikierros(pelaaja);
     
     @Test
     public void oikeaMaaraPisteita() {
@@ -24,7 +25,9 @@ public class PelikierrosTest {
     }
     
     @Test
-    public void oikeaTulostus() {
-        assertEquals("Et läpäissyt tasoa. Yritä uudelleen (k/e)?", kierros.toString());
+    public void tahdetOikein() {
+        assertEquals("Masa : 0 tähteä", kierros.toString());
+        kierros = new Pelikierros(new Pelaaja("Kake", 10, new HashMap()));
+        assertEquals("Kake : 0 tähteä", kierros.toString());
     }
 }

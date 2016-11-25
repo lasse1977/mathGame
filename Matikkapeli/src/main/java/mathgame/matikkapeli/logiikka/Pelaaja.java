@@ -16,12 +16,16 @@ public class Pelaaja {
         this.tahtia = tahtia;
     }
 
-    public int getTaso() {
+    public int haeTaso() {
         return taso;
     }
     
-    public void setTaso(int uusiTaso) {
+    public void asetaTaso(int uusiTaso) {
         this.taso = uusiTaso;
+    }
+    
+    public String haeNimi() {
+        return nimimerkki;
     }
 
     @Override
