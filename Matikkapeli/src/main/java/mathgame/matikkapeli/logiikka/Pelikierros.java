@@ -24,7 +24,7 @@ public class Pelikierros {
             int luku2 = arpoja.haeLuku();
             System.out.println("Paljonko on " + arpoja.tehtava(luku1, luku2) + "?");
             int vastaus = Integer.parseInt(lukija.nextLine());
-            Tarkastaja tarkastaja = new Tarkastaja(vastaus, arpoja.lasku(luku1, luku2));
+            Tarkastaja tarkastaja = new Tarkastaja(vastaus, arpoja.tehtavanVastaus(luku1, luku2));
             if (tarkastaja.onkoOikein()) {
                 pisteet++;
             } else {

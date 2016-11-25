@@ -37,7 +37,7 @@ public class TehtavanArpoja {
         return " " + luku1 + " " + mitaLasketaan() + " " + luku2;
     }
     
-    public int lasku(int luku1, int luku2) {
+    public int tehtavanVastaus(int luku1, int luku2) {
         int lasku = luku1 + luku2;
         if (mitaLasketaan().equals("-")) {
             lasku = luku1 - luku2;
